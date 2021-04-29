@@ -1,0 +1,57 @@
+{
+
+  "endpoints": [
+
+    {
+      "rest_route_name": "organizations",
+      "wp_post_type_slug": "organizations",
+      "callback_fn": "STILTS_FILTER_STANDARD",
+      "per_page": 9,
+
+      "query_args": {
+        "wp_filter_type": "taxonomy",
+        "filter_parameters": [
+          {
+            "rest_parameter" : "state",
+            "wp_filter_field_slug" : "organizations-state" 
+          },
+          {
+            "rest_parameter" : "state2",
+            "wp_filter_field_slug" : "organizations-state2" 
+          }
+        ]
+      },
+      "result_template": "organizations-card"
+    },
+
+    {
+      "rest_route_name": "resources",
+      "wp_post_type_slug": "resources",
+      "callback_fn": "STILTS_FILTER_STANDARD",
+      "per_page": 4,
+      "query_args": {
+        "wp_filter_type": "taxonomy",
+        "filter_parameters": [
+          {
+            "rest_parameter" : "category",
+            "wp_filter_field_slug" : "resource-category" 
+          }
+        ]
+      },
+      "result_template": "resources/resources-card"
+    }
+
+  ],
+
+  "pages" : [
+    {
+      "wp_post_type_slug": "organizations",
+      "wp_template_file": "page-templates/organizations-page.php"
+    },
+    {
+      "wp_post_type_slug": "resources",
+      "wp_template_file": "page-templates/resources-page.php"
+    }
+  ]
+
+}
